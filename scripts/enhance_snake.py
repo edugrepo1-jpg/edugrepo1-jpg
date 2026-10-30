@@ -11,6 +11,65 @@ SNAKE = re.compile(r'((?:<rect class="s s[0-9a-z]+"[^>]*/>)+)')
 PROGRESS = re.compile(r'<rect class="u u[0-9a-z]+"[^>]*/>')
 
 
+
+
+# Five-by-seven pixel font: each illuminated pixel sits EXACTLY on an
+# existing contribution cell (same x/y, size, radius, zero backdrop).
+READY_GLYPHS = {
+    "R": ("11110", "10001", "10001", "11110", "10100", "10010", "10001"),
+    "E": ("11111", "10000", "10000", "11110", "10000", "10000", "11111"),
+    "A": ("01110", "10001", "10001", "11111", "10001", "10001", "10001"),
+    "D": ("11110", "10001", "10001", "10001", "10001", "10001", "11110"),
+    "Y": ("10001", "10001", "01010", "00100", "00100", "00100", "00100"),
+}
+
+
+def build_ready(cells: list[tuple[str, str]], duration_ms: int, dark: bool) -> tuple[str, str]:
+    """Build a large READY opening with real calendar-sized square pixels."""
+    word = "READY"
+    width_in_columns = len(word) * 5 + len(word) - 1
+    start_col = (53 - width_in_columns) // 2
+    available = set(cells)
+    color = "#39d353" if dark else "#2da44e"
+    css = []
+    letters = []
+
+    for i, char in enumerate(word):
+        # The lettering assembles very quickly, holds, and fades away
+        # before the snake appears. All phases share snk's native loop.
+        enter = 0.12 + i * 0.60
+        visible = enter + 0.32
+        css.append(
+            f"@keyframes arcadeReady{i}{{"
+            f"0%,{enter:.2f}%{{opacity:0}}"
+            f"{visible:.2f}%,6.35%{{opacity:1}}"
+            f"7.10%,100%{{opacity:0}}"
+            "}"
+            f".arcade-ready-letter-{i}{{opacity:0;"
+            f"animation:arcadeReady{i} {duration_ms}ms steps(1,end) infinite}}"
+        )
+        pixels = []
+        for row, bits in enumerate(READY_GLYPHS[char]):
+            for col, bit in enumerate(bits):
+                if bit != "1":
+                    continue
+                x = str(2 + 16 * (start_col + 6 * i + col))
+                y = str(2 + 16 * row)
+                if (x, y) not in available:
+                    raise ValueError(f"READY pixel must align with calendar cell: {x}, {y}")
+                pixels.append(
+                    f'<rect x="{x}" y="{y}" width="12" height="12" rx="2" ry="2"/>'
+                )
+        letters.append(
+            f'<g class="arcade-ready-letter-{i}">' + "".join(pixels) + "</g>"
+        )
+    markup = (
+        f'<g id="arcade-ready" fill="{color}" pointer-events="none">'
+        + "".join(letters)
+        + "</g>"
+    )
+    return "".join(css), markup
+
 def enhance(path: Path) -> None:
     svg = path.read_text(encoding="utf-8")
     cells = CELLS.findall(svg)
@@ -112,7 +171,8 @@ def enhance(path: Path) -> None:
 
     animation += (
         f'@keyframes arcadeSnakeBoom{{'
-        f'0%,{blast_at - 0.24:.2f}%{{opacity:1}}'
+        '0%,7.15%{opacity:0}'
+        f'7.19%,{blast_at - 0.24:.2f}%{{opacity:1}}'
         f'{blast_at - 0.16:.2f}%{{opacity:.12}}'
         f'{blast_at - 0.09:.2f}%{{opacity:1}}'
         f'{blast_at:.2f}%,99.90%{{opacity:0}}'
@@ -203,7 +263,8 @@ def enhance(path: Path) -> None:
         + ''.join(burst_pixels)
         + '</g>'
     )
-    svg = svg.replace('</style>', animation + '</style>', 1)
+    ready_css, ready_markup = build_ready(cells, duration_ms, dark)
+    svg = svg.replace('</style>', animation + ready_css + '</style>', 1)
     ending = (
         '<g id="arcade-clear" class="arcade-clear">'
         f'<rect x="289" y="119" width="270" height="38" rx="9" ry="9" fill="{caption}" '
@@ -219,7 +280,7 @@ def enhance(path: Path) -> None:
         f'<rect class="arcade-spark" x="576" y="144" width="3" height="3" fill="{text}"/>'
         '</g>'
     )
-    svg = svg.replace('</svg>', explosion + ending + '</svg>', 1)
+    svg = svg.replace('</svg>', ready_markup + explosion + ending + '</svg>', 1)
     path.write_text(svg, encoding="utf-8")
     print(f"Enhanced {path}: cells={len(cells)}, last_eaten={last_eaten:.2f}%, game_clear_at={show_at:.2f}%")
 
