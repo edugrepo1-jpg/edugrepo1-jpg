@@ -24,17 +24,23 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 
 ## 🛠️ Tech & interests
 
-<table align="center" border="0" cellspacing="0" cellpadding="5">
-  <tr>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android" width="40" height="40" /><br/><sub><b>Android</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" width="40" height="40" /><br/><sub><b>Linux</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" width="40" height="40" /><br/><sub><b>Git</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="GitHub Actions" width="40" height="40" /><br/><sub><b>GitHub Actions</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/gnubash/FFFFFF" alt="Bash" width="40" height="40" /><br/><sub><b>Bash</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="C#" width="40" height="40" /><br/><sub><b>C#</b></sub></td>
-    <td align="center" width="74"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="40" height="40" /><br/><sub><b>Python</b></sub></td>
-  </tr>
-</table>
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/android.svg" alt="Android" width="80" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/linux.svg" alt="Linux" width="80" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/git.svg" alt="Git" width="80" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/githubactions.svg" alt="GitHub Actions" width="108" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/gnubash.svg" alt="Bash" width="80" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/dotnet.svg" alt="C#" width="80" height="78" />
+&nbsp;
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/python.svg" alt="Python" width="80" height="78" />
+
+</div>
 
 ---
 
