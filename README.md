@@ -30,7 +30,7 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 
 ## 🏅 Menção honrosa
 
-**Moto Nuvem** — Projeto definitivamente encerrado, reconhecido por sua trajetória e contribuição à comunidade de desenvolvimento Android.
+**Moto Nuvem** — Projeto definitivamente encerrado. Agradeço profundamente aos idealizadores do projeto.
 
 ---
 
