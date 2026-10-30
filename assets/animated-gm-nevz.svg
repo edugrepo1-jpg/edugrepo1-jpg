@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="640" height="120" role="img" aria-labelledby="title desc">
+  <title id="title">GM Nevz ⚡</title>
+  <desc id="desc">GM Nevz fades in one letter at a time, followed by an electric lightning bolt and miniature sparks.</desc>
+  <style>
+    .glyph{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:64px;font-weight:800;fill:#e6edf3;opacity:0;animation:letterFade 7s ease-out infinite}
+    .letter-0{animation-delay:0.00s}.letter-1{animation-delay:0.16s}.letter-2{animation-delay:0.32s}.letter-3{animation-delay:0.48s}.letter-4{animation-delay:0.64s}.letter-5{animation-delay:0.80s}
+    @keyframes letterFade{0%,4%{opacity:0;transform:translateY(9px)}12%,86%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(-2px)}}
+    .bolt{opacity:0;transform-origin:489px 61px;animation:boltStrike 7s ease-in-out infinite}
+    @keyframes boltStrike{0%,22%{opacity:0;transform:scale(.8)}24%,27%{opacity:1;transform:scale(1.08)}28%{opacity:.15}30%,84%{opacity:1;transform:scale(1)}95%,100%{opacity:0}}
+    .spark{opacity:0;transform-origin:center;animation:sparkBurst 7s ease-in-out infinite}
+    .s1{animation-delay:.04s}.s2{animation-delay:.18s}.s3{animation-delay:.12s}.s4{animation-delay:.3s}
+    @keyframes sparkBurst{0%,24%{opacity:0;transform:scale(.5)}27%{opacity:1;transform:scale(1.1)}33%{opacity:.18}39%,60%{opacity:.85}75%,100%{opacity:0}}
+    @media (prefers-color-scheme:light){.glyph{fill:#24292f}}
+    @media (prefers-reduced-motion:reduce){.glyph,.bolt,.spark{animation:none;opacity:1;transform:none}}
+  </style>
+  <text class="glyph letter-0" x="113" y="83">G</text>
+  <text class="glyph letter-1" x="165" y="83">M</text>
+  <text class="glyph letter-2" x="249" y="83">N</text>
+  <text class="glyph letter-3" x="300" y="83">e</text>
+  <text class="glyph letter-4" x="340" y="83">v</text>
+  <text class="glyph letter-5" x="383" y="83">z</text>
+  <g class="bolt">
+    <path d="M493 22L468 64h20l-10 33 46-49h-24l15-26z" fill="#facc15" stroke="#eab308" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M497 27l-19 34h16l-7 24 29-32h-22z" fill="#fff4ab" opacity=".65"/>
+  </g>
+  <g fill="#facc15" stroke-linejoin="round">
+    <path class="spark s1" d="M464 22l-8 15h7l-3 10 13-17h-8l5-8z"/>
+    <path class="spark s2" d="M527 33l-7 12h6l-3 9 11-13h-7l4-8z"/>
+    <path class="spark s3" d="M454 70l-7 10h6l-3 9 11-13h-7l4-6z"/>
+    <path class="spark s4" d="M528 78l-8 12h6l-3 9 12-14h-7l4-7z"/>
+  </g>
+</svg>
