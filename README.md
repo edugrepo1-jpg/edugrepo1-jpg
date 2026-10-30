@@ -1,6 +1,12 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/animated-gm-nevz-v2.svg" alt="GM Nevz ⚡ — animated letters and lightning effects" width="560" />
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=54&amp;duration=1900&amp;pause=1450&amp;center=true&amp;vCenter=true&amp;width=270&amp;height=86&amp;lines=GM+Nevz&amp;color=E6EDF3" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=54&amp;duration=1900&amp;pause=1450&amp;center=true&amp;vCenter=true&amp;width=270&amp;height=86&amp;lines=GM+Nevz&amp;color=24292F" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=54&amp;duration=1900&amp;pause=1450&amp;center=true&amp;vCenter=true&amp;width=270&amp;height=86&amp;lines=GM+Nevz&amp;color=E6EDF3" alt="GM Nevz — nome sendo digitado letra por letra" width="270" height="86" />
+  </picture><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/animated-lightning.svg" alt="Raio elétrico animado" width="74" height="86" />
+</p>
 
 <h3 align="center">Android ROM &amp; App Developer &bull; Kernel Enthusiast &bull; Open Source</h3>
 
