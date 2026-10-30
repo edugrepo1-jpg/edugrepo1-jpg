@@ -30,10 +30,8 @@ def enhance(path: Path) -> None:
 
     dark = "dark" in path.stem
     if dark:
-        top, bottom, border = "#273449", "#172131", "#46556b"
         caption, text, subdued = "#142018", "#86efac", "#d1fae5"
     else:
-        top, bottom, border = "#f4f7fa", "#e4eaf1", "#c6d1dc"
         caption, text, subdued = "#e7f5ec", "#167347", "#23573c"
 
     square_paths = ''.join(
@@ -42,22 +40,14 @@ def enhance(path: Path) -> None:
     )
     defs = (
         '<defs>'
-        '<linearGradient id="snake-panel-gradient" x1="0" y1="0" x2="1" y2="1">'
-        f'<stop offset="0%" stop-color="{top}"/>'
-        f'<stop offset="100%" stop-color="{bottom}"/>'
-        '</linearGradient>'
         '<clipPath id="snake-cells" clipPathUnits="userSpaceOnUse">'
         + square_paths +
         '</clipPath>'
         '</defs>'
     )
-    panel = (
-        '<rect x="-15" y="-31" width="878" height="190" rx="17" ry="17" '
-        f'fill="url(#snake-panel-gradient)" stroke="{border}" stroke-width="1"/>'
-    )
     if '</desc>' not in svg or '</style>' not in svg:
         raise ValueError(f"Unexpected SVG structure in {path}")
-    svg = svg.replace('</desc>', '</desc>' + defs + panel, 1)
+    svg = svg.replace('</desc>', '</desc>' + defs, 1)
 
     # Remove the horizontal progress line below the contribution grid.
     svg = PROGRESS.sub('', svg)
