@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="512 0 166 140" width="166" height="140" role="img" aria-labelledby="title description">
+  <title id="title">Animated yellow lightning with electric sparks</title>
+  <desc id="description">The original approved lightning art: yellow bolt and five animated sparks, with transparent background.</desc>
+  <defs>
+    <filter id="electricGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    svg{background:transparent}
+
+    .letter{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:76px;font-weight:720;letter-spacing:1px;fill:#e6edf3;opacity:0;transform-origin:center;animation-fill-mode:both}
+    .letter-0,.letter-1{fill:#f3f4f6}
+    @keyframes letter0{0%,2.0%{opacity:0;transform:translateY(14px);filter:blur(3px)}7.0%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-0{animation:letter0 6.4s ease-out infinite}
+    @keyframes letter1{0%,6.2%{opacity:0;transform:translateY(14px);filter:blur(3px)}11.2%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-1{animation:letter1 6.4s ease-out infinite}
+    @keyframes letter2{0%,10.4%{opacity:0;transform:translateY(14px);filter:blur(3px)}15.4%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-2{animation:letter2 6.4s ease-out infinite}
+    @keyframes letter3{0%,14.6%{opacity:0;transform:translateY(14px);filter:blur(3px)}19.6%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-3{animation:letter3 6.4s ease-out infinite}
+    @keyframes letter4{0%,18.8%{opacity:0;transform:translateY(14px);filter:blur(3px)}23.8%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-4{animation:letter4 6.4s ease-out infinite}
+    @keyframes letter5{0%,23.0%{opacity:0;transform:translateY(14px);filter:blur(3px)}28.0%,82%{opacity:1;transform:translateY(0px);filter:blur(0px)}92%,100%{opacity:0;transform:translateY(-4px);filter:blur(1px)}}.letter-5{animation:letter5 6.4s ease-out infinite}
+    .strike{opacity:0;transform-origin:571px 75px;animation:electricStrike 6.4s ease-in-out infinite}
+    @keyframes electricStrike{0%,24%{opacity:0;transform:scale(.75)}27%{opacity:1;transform:scale(1.15)}29%{opacity:.18;transform:scale(.95)}32%,73%{opacity:1;transform:scale(1)}76%{opacity:.2}77%,83%{opacity:1}92%,100%{opacity:0;transform:scale(.9)}}
+    .spark{opacity:0;transform-origin:center;animation:electricSpark 6.4s ease-out infinite}
+    .spark-1{animation-delay:0s}.spark-2{animation-delay:.13s}.spark-3{animation-delay:.22s}.spark-4{animation-delay:.06s}.spark-5{animation-delay:.19s}
+    @keyframes electricSpark{0%,25%{opacity:0;transform:scale(.35)}27%{opacity:1;transform:scale(1.25)}33%{opacity:.12;transform:scale(.6)}37%{opacity:1;transform:scale(1)}42%{opacity:0}51%{opacity:.95}57%,63%{opacity:0}67%{opacity:1}74%,100%{opacity:0}}
+    .halo{opacity:0;animation:haloPulse 6.4s ease-in-out infinite}
+    @keyframes haloPulse{0%,25%{opacity:0}28%{opacity:.85}35%{opacity:.18}40%,70%{opacity:.45}75%,100%{opacity:0}}
+    @media (prefers-color-scheme:light){.letter{fill:#24292f}.letter-0,.letter-1{fill:#24292f}}
+    @media (prefers-reduced-motion:reduce){.letter,.strike,.spark{animation:none;opacity:1;transform:none;filter:none}.halo{animation:none;opacity:.28}}
+  </style>
+  <g class="halo" filter="url(#electricGlow)">
+    <path d="M572 17L543 75h26l-17 42 60-65h-31l19-35z" fill="#facc15" opacity=".65"/>
+  </g>
+  <g class="strike">
+    <path d="M575 16L547 73h24l-16 41 58-64h-30l18-34z" fill="#facc15" stroke="#f59e0b" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M577 25l-17 43h20l-12 30 34-42h-24l12-31z" fill="#fff7c2" opacity=".92"/>
+  </g>
+  <g fill="#facc15" filter="url(#electricGlow)">
+    <path class="spark spark-1" d="M532 16l-8 18h7l-4 15 16-22h-9l6-11z"/>
+    <path class="spark spark-2" d="M614 26l-11 20h7l-5 14 18-24h-10l7-10z"/>
+    <path class="spark spark-3" d="M528 87l-9 15h7l-3 11 15-20h-8l5-6z"/>
+    <path class="spark spark-4" d="M624 82l-8 14h7l-3 10 14-19h-9l5-5z"/>
+    <path class="spark spark-5" d="M652 50l-5 11h6l-3 10 12-16h-7l4-5z"/>
+  </g>
+</svg>
