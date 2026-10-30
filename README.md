@@ -1,9 +1,9 @@
 <div align="center">
 
 # GM Nevz ⚡
-### Android ROM Developer • Kernel Enthusiast • Open Source
+### Android ROM & App Developer • Kernel Enthusiast • Open Source
 
-Building and customizing Android experiences, from Samsung firmware to community tools.
+Developing and customizing Android ROMs, kernels, and apps — from Samsung firmware to user-facing experiences.
 
 [![GitHub](https://img.shields.io/badge/GitHub-edugrepo1--jpg-181717?style=for-the-badge&logo=github)](https://github.com/edugrepo1-jpg)
 [![Telegram](https://img.shields.io/badge/Telegram-%40GMnevz-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/GMnevz)
@@ -18,6 +18,7 @@ Building and customizing Android experiences, from Samsung firmware to community
 - **[ArtisanROM](https://github.com/edugrepo1-jpg/ArtisanROM)** — Custom firmware development for Samsung Galaxy devices.
 - **[ParadoxUI](https://github.com/edugrepo1-jpg/ParadoxUI)** — Work-in-progress custom ROM for Samsung Galaxy devices.
 - **[ArtisanKRNL / Exynos 990](https://github.com/edugrepo1-jpg/android_kernel_samsung_exynos990)** — Kernel development and experimentation.
+- **[DuoStatusBar / DUO Recreate](https://github.com/edugrepo1-jpg/duoStatusBar)** — Android status-bar customization app with dynamic-island-style controls.
 
 ---
 
