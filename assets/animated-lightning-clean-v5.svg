@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="512 0 166 140" width="166" height="140" role="img" aria-labelledby="title desc">
+<title id="title">Raio animado</title>
+<desc id="desc">Raio amarelo animado com faíscas, sem fundo, sem filtros e sem retângulo.</desc>
+<style>
+.strike{transform-origin:571px 75px;animation:strike 6.4s ease-in-out infinite}
+@keyframes strike{0%,24%{opacity:0;transform:scale(.85)}27%,28%{opacity:1;transform:scale(1.08)}30%{opacity:.2;transform:scale(1)}32%,82%{opacity:1;transform:scale(1)}94%,100%{opacity:0}}
+.spark{opacity:0;animation:blink 6.4s ease-out infinite}
+.spark-1{animation-delay:0s}.spark-2{animation-delay:.13s}.spark-3{animation-delay:.22s}.spark-4{animation-delay:.06s}.spark-5{animation-delay:.19s}
+@keyframes blink{0%,25%{opacity:0}28%,34%{opacity:1}40%,48%{opacity:0}52%,60%{opacity:1}74%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.strike,.spark{animation:none;opacity:1;transform:none}}
+</style>
+<g class="strike">
+    <path d="M575 16L547 73h24l-16 41 58-64h-30l18-34z" fill="#facc15" stroke="#f59e0b" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M577 25l-17 43h20l-12 30 34-42h-24l12-31z" fill="#fff7c2" opacity=".92"/>
+  </g>
+<g fill="#facc15">
+    <path class="spark spark-1" d="M532 16l-8 18h7l-4 15 16-22h-9l6-11z"/>
+    <path class="spark spark-2" d="M614 26l-11 20h7l-5 14 18-24h-10l7-10z"/>
+    <path class="spark spark-3" d="M528 87l-9 15h7l-3 11 15-20h-8l5-6z"/>
+    <path class="spark spark-4" d="M624 82l-8 14h7l-3 10 14-19h-9l5-5z"/>
+    <path class="spark spark-5" d="M652 50l-5 11h6l-3 10 12-16h-7l4-5z"/>
+  </g>
+</svg>
