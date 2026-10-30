@@ -120,6 +120,31 @@ def enhance(path: Path) -> None:
         f'.arcade-snake{{animation:arcadeSnakeBoom {duration_ms}ms steps(1,end) infinite}}'
     )
 
+    # An unmistakably circular shockwave, expanding concentrically from
+    # the middle of the grid. The existing clip path keeps the rings inside
+    # the individual GitHub contribution squares, without a large backdrop.
+    ring_shapes = []
+    for ring in range(2):
+        start = blast_at + ring * 0.23
+        spread = min(start + 1.8, 99.1)
+        peak = start + 0.26
+        anim = f"arcadeShockwave{ring}"
+        animation += (
+            f'@keyframes {anim}{{'
+            f'0%,{start - .03:.2f}%{{opacity:0;transform:scale(.05)}}'
+            f'{start:.2f}%{{opacity:.95;transform:scale(.12)}}'
+            f'{peak:.2f}%{{opacity:.92;transform:scale(.7)}}'
+            f'{spread:.2f}%,100%{{opacity:0;transform:scale(5.3)}}'
+            '}'
+            f'.arcade-ring-{ring}{{opacity:0;transform-origin:424px 56px;'
+            f'transform-box:view-box;animation:{anim} {duration_ms}ms ease-out infinite}}'
+        )
+        ring_shapes.append(
+            f'<circle class="arcade-ring-{ring}" cx="424" cy="56" r="60" '
+            f'fill="none" stroke="{flash_fill}" stroke-width="{4 - ring}" '
+            'stroke-opacity=".95"/>'
+        )
+
     wave_cells = [[] for _ in range(wave_count)]
     for x, y in cells:
         distance = math.hypot(float(x) + 6 - 424, float(y) + 6 - 56)
@@ -173,6 +198,7 @@ def enhance(path: Path) -> None:
     explosion = (
         '<g id="arcade-explosion" clip-path="url(#snake-cells)" '
         f'fill="{flash_fill}" pointer-events="none">'
+        + ''.join(ring_shapes)
         + ''.join(wave_layers)
         + ''.join(burst_pixels)
         + '</g>'
