@@ -17,7 +17,6 @@ Building and customizing Android experiences, from Samsung firmware to community
 - **[ArtisanROM](https://github.com/edugrepo1-jpg/ArtisanROM)** — Custom firmware development for Samsung Galaxy devices.
 - **[ParadoxUI](https://github.com/edugrepo1-jpg/ParadoxUI)** — Work-in-progress custom ROM for Samsung Galaxy devices.
 - **[ArtisanKRNL / Exynos 990](https://github.com/edugrepo1-jpg/android_kernel_samsung_exynos990)** — Kernel development and experimentation.
-- **[MotoNuvem](https://motonuvem.pages.dev)** — Android community hub for ROMs, kernels, recoveries and tools.
 
 ---
 
