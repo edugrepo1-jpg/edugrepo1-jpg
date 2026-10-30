@@ -54,9 +54,9 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake-dark.svg?arcade=20261030" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake.svg?arcade=20261030" />
-  <img alt="GitHub contribution grid with native green intensity, animated purple snake and arcade-style LEVEL CLEAR finale" src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake-dark.svg?arcade=20261030" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake-dark.svg?v=green-no-panel-4ae9b4a-7f1de0b" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake.svg?v=green-no-panel-4ae9b4a-7f1de0b" />
+  <img alt="GitHub contribution grid with native green intensity, animated green snake and arcade-style LEVEL CLEAR finale" src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/github-contribution-grid-snake-dark.svg?v=green-no-panel-4ae9b4a-7f1de0b" />
 </picture>
 
 </div>
