@@ -29,7 +29,7 @@ jobs:
 
           for path in Path("dist").glob("*.svg"):
               svg = path.read_text(encoding="utf-8")
-              cells = re.findall(r'<rect class="c(?: c\\d+)?" x="([0-9.]+)" y="([0-9.]+)"[^>]*/>', svg)
+              cells = re.findall(r'<rect class="c(?: c\d+)?" x="([0-9.]+)" y="([0-9.]+)"[^>]*/>', svg)
               if len(cells) < 300:
                   raise RuntimeError(f"Contribution grid missing in {path}")
               # Clip the animated snake to the exact union of contribution cells.
@@ -40,8 +40,8 @@ jobs:
               )
               clip = '<defs><clipPath id="snake-cells" clipPathUnits="userSpaceOnUse">' + squares + '</clipPath></defs>'
               svg = svg.replace("</desc>", "</desc>" + clip, 1)
-              svg = re.sub(r'<rect class="u u\\d+"[^>]*/>', '', svg)
-              snake = re.compile(r'((?:<rect class="s s\\d+"[^>]*/>)+)')
+              svg = re.sub(r'<rect class="u u\d+"[^>]*/>', '', svg)
+              snake = re.compile(r'((?:<rect class="s s\d+"[^>]*/>)+)')
               svg, count = snake.subn(lambda m: '<g clip-path="url(#snake-cells)">' + m.group(1) + '</g>', svg, count=1)
               if count != 1:
                   raise RuntimeError(f"Snake elements not found in {path}")
