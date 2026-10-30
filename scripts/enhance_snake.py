@@ -2,6 +2,7 @@
 """Style Platane/snk SVGs without changing any GitHub contribution values."""
 from pathlib import Path
 from datetime import datetime, timedelta, date, timezone
+import math
 import re
 import sys
 
@@ -84,7 +85,7 @@ def enhance(path: Path) -> None:
     # Remove the horizontal progress line below the contribution grid.
     svg = PROGRESS.sub('', svg)
     svg, n = SNAKE.subn(
-        lambda m: '<g clip-path="url(#snake-cells)">' + m.group(1) + '</g>',
+        lambda m: '<g class="arcade-snake" clip-path="url(#snake-cells)">' + m.group(1) + '</g>',
         svg, count=1
     )
     if n != 1:
@@ -100,6 +101,81 @@ def enhance(path: Path) -> None:
         f'animation:arcadeClear {duration_ms}ms ease-in-out infinite}}'
         '@keyframes arcadeSpark{0%,100%{opacity:.3}50%{opacity:1}}'
         '.arcade-spark{animation:arcadeSpark 600ms steps(2,end) infinite}'
+    )
+    # Finale: blink the snake, explode into pixels from the center, then
+    # pulse a fast green wave OUTWARD through the actual contribution squares.
+    # All effects use the same duration as Platane/snk so the loop stays synced.
+    blast_at = min(show_at + 0.36, 97.35)
+    wave_count = 14
+    step = min(0.22, (98.50 - blast_at - 0.40) / (wave_count - 1))
+    flash_fill = "#86efac" if dark else "#2da44e"
+
+    animation += (
+        f'@keyframes arcadeSnakeBoom{{'
+        f'0%,{blast_at - 0.24:.2f}%{{opacity:1}}'
+        f'{blast_at - 0.16:.2f}%{{opacity:.12}}'
+        f'{blast_at - 0.09:.2f}%{{opacity:1}}'
+        f'{blast_at:.2f}%,99.90%{{opacity:0}}'
+        '100%{opacity:1}}'
+        f'.arcade-snake{{animation:arcadeSnakeBoom {duration_ms}ms steps(1,end) infinite}}'
+    )
+
+    wave_cells = [[] for _ in range(wave_count)]
+    for x, y in cells:
+        distance = math.hypot(float(x) + 6 - 424, float(y) + 6 - 56)
+        band = min(wave_count - 1, int(distance // 32))
+        wave_cells[band].append(
+            f'<rect x="{x}" y="{y}" width="12" height="12" rx="2" ry="2"/>'
+        )
+
+    wave_layers = []
+    for band, rects in enumerate(wave_cells):
+        if not rects:
+            continue
+        hit = blast_at + band * step
+        keyframe = f'arcadeWave{band}'
+        animation += (
+            f'@keyframes {keyframe}{{'
+            f'0%,{hit - 0.03:.2f}%{{opacity:0}}'
+            f'{hit:.2f}%{{opacity:.97}}'
+            f'{hit + 0.13:.2f}%{{opacity:.24}}'
+            f'{hit + 0.23:.2f}%{{opacity:.88}}'
+            f'{hit + 0.39:.2f}%,100%{{opacity:0}}'
+            '}'
+            f'.arcade-wave-{band}{{opacity:0;'
+            f'animation:{keyframe} {duration_ms}ms steps(2,end) infinite}}'
+        )
+        wave_layers.append(
+            f'<g class="arcade-wave-{band}">' + ''.join(rects) + '</g>'
+        )
+
+    burst_pixels = []
+    for i in range(12):
+        angle = i * math.tau / 12
+        dx = round(math.cos(angle) * (55 + (i % 3) * 24))
+        dy = round(math.sin(angle) * (35 + (i % 3) * 10))
+        keyframe = f'arcadeParticle{i}'
+        animation += (
+            f'@keyframes {keyframe}{{'
+            f'0%,{blast_at - 0.08:.2f}%{{opacity:0;transform:translate(0px,0px) scale(.5)}}'
+            f'{blast_at:.2f}%{{opacity:1;transform:translate(0px,0px) scale(1)}}'
+            f'{blast_at + 0.83:.2f}%,100%{{opacity:0;'
+            f'transform:translate({dx}px,{dy}px) scale(.15)}}'
+            '}'
+            f'.arcade-pixel-{i}{{opacity:0;transform-origin:424px 56px;'
+            f'animation:{keyframe} {duration_ms}ms ease-out infinite}}'
+        )
+        burst_pixels.append(
+            f'<rect class="arcade-pixel-{i}" x="421" y="53" '
+            f'width="6" height="6" rx="1" ry="1" fill="{flash_fill}"/>'
+        )
+
+    explosion = (
+        '<g id="arcade-explosion" clip-path="url(#snake-cells)" '
+        f'fill="{flash_fill}" pointer-events="none">'
+        + ''.join(wave_layers)
+        + ''.join(burst_pixels)
+        + '</g>'
     )
     svg = svg.replace('</style>', animation + '</style>', 1)
     ending = (
@@ -117,7 +193,7 @@ def enhance(path: Path) -> None:
         f'<rect class="arcade-spark" x="576" y="144" width="3" height="3" fill="{text}"/>'
         '</g>'
     )
-    svg = svg.replace('</svg>', ending + '</svg>', 1)
+    svg = svg.replace('</svg>', explosion + ending + '</svg>', 1)
     path.write_text(svg, encoding="utf-8")
     print(f"Enhanced {path}: cells={len(cells)}, last_eaten={last_eaten:.2f}%, game_clear_at={show_at:.2f}%")
 
