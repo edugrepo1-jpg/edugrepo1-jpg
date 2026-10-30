@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Style Platane/snk SVGs without changing any GitHub contribution values."""
 from pathlib import Path
+from datetime import datetime, timedelta, date, timezone
 import re
 import sys
 
@@ -48,6 +49,37 @@ def enhance(path: Path) -> None:
     if '</desc>' not in svg or '</style>' not in svg:
         raise ValueError(f"Unexpected SVG structure in {path}")
     svg = svg.replace('</desc>', '</desc>' + defs, 1)
+
+    # Display the entire rolling year with visible month labels, as in GitHub.
+    today = datetime.now(timezone.utc).date()
+    first = today - timedelta(days=365)
+    first -= timedelta(days=(first.weekday() + 1) % 7)  # Sunday column origin
+    month = date(first.year, first.month, 1)
+    labels = []
+    while month <= today:
+        week = (month - first).days // 7
+        if week >= 0 and week < 53:
+            x = 2 + week * 16
+            text_color = "#8b949e" if dark else "#57606a"
+            labels.append(
+                f'<text x="{x}" y="-12" fill="{text_color}" '
+                'font-family="Arial, sans-serif" font-size="10" '
+                f'font-weight="500">{month.strftime("%b")}</text>'
+            )
+        month = date(month.year + (month.month == 12), month.month % 12 + 1, 1)
+
+    # The generated path can travel a row beyond the grid. Keep all
+    # translated snake segments on valid column/row positions.
+    def clamp_segment(match):
+        x = max(0, min(832, float(match.group(1))))
+        y = max(0, min(96, float(match.group(2))))
+        return f'transform:translate({x:g}px,{y:g}px)'
+
+    svg = re.sub(
+        r'transform:translate\((-?[0-9.]+)px,(-?[0-9.]+)px\)',
+        clamp_segment, svg
+    )
+    svg = svg.replace('</style>', '</style>' + ''.join(labels), 1)
 
     # Remove the horizontal progress line below the contribution grid.
     svg = PROGRESS.sub('', svg)
