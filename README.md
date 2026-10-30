@@ -23,13 +23,17 @@ Building and customizing Android experiences, from Samsung firmware to community
 
 ## 🛠️ Tech & interests
 
-![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=black)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-121011?style=flat-square&logo=gnubash&logoColor=white)
-![C%23](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+<div align="center">
+
+<img src="https://cdn.simpleicons.org/android/3DDC84" alt="android" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/linux/FCC624" alt="linux" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/git/F05032" alt="git" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="githubactions" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/gnubash/FFFFFF" alt="gnubash" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="dotnet" width="42" height="42" />
+<img src="https://cdn.simpleicons.org/python/3776AB" alt="python" width="42" height="42" />
+
+</div>
 
 ---
 
