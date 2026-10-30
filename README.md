@@ -54,9 +54,9 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-clean-v2-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-clean-v2.svg" />
-  <img alt="GitHub contribution grid with native green intensity, animated green snake and arcade-style LEVEL CLEAR finale" src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-clean-v2-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-arcade-v3-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-arcade-v3.svg" />
+  <img alt="GitHub contribution grid with native green intensity, animated green snake and arcade-style LEVEL CLEAR finale" src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/contribution-snake-arcade-v3-dark.svg" />
 </picture>
 
 </div>
