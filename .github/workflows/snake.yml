@@ -20,7 +20,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa&color_dots=%230d1117,%234f46e5,%237c3aed,%23a855f7,%23e879f9
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa&color_dots=%2330363d,%234f46e5,%237c3aed,%23a855f7,%23e879f9
       - name: Confine snake to contribution squares and remove progress bar
         run: |
           python3 - <<'PY'
@@ -38,7 +38,10 @@ jobs:
                   f'<rect x="{x}" y="{y}" width="12" height="12" rx="2" ry="2"/>'
                   for x, y in cells
               )
-              clip = '<defs><clipPath id="snake-cells" clipPathUnits="userSpaceOnUse">' + squares + '</clipPath></defs>'
+              # Solid neutral background: visible in both GitHub themes.
+              background = '<rect x="-8" y="-14" width="864" height="134" rx="12" ry="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>'
+              svg = svg.replace("</desc>", "</desc>" + background, 1)
+              clip = '<defs><clipPath id="snake-cells"' clipPathUnits="userSpaceOnUse">' + squares + '</clipPath></defs>'
               svg = svg.replace("</desc>", "</desc>" + clip, 1)
               svg = re.sub(r'<rect class="u u\d+"[^>]*/>', '', svg)
               snake = re.compile(r'((?:<rect class="s s\d+"[^>]*/>)+)')
