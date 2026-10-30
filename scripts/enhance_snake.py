@@ -16,18 +16,19 @@ PROGRESS = re.compile(r'<rect class="u u[0-9a-z]+"[^>]*/>')
 # Five-by-seven pixel font: each illuminated pixel sits EXACTLY on an
 # existing contribution cell (same x/y, size, radius, zero backdrop).
 READY_GLYPHS = {
-    "R": ("11110", "10001", "10001", "11110", "10100", "10010", "10001"),
-    "E": ("11111", "10000", "10000", "11110", "10000", "10000", "11111"),
-    "A": ("01110", "10001", "10001", "11111", "10001", "10001", "10001"),
-    "D": ("11110", "10001", "10001", "10001", "10001", "10001", "11110"),
-    "Y": ("10001", "10001", "01010", "00100", "00100", "00100", "00100"),
+    # Bold 7x7 pixel font; each lit pixel remains one real calendar square.
+    "R": ("1111100", "1100110", "1100110", "1111100", "1110000", "1101100", "1100110"),
+    "E": ("1111111", "1100000", "1100000", "1111110", "1100000", "1100000", "1111111"),
+    "A": ("0011100", "0110110", "1100011", "1111111", "1100011", "1100011", "1100011"),
+    "D": ("1111100", "1100110", "1100011", "1100011", "1100011", "1100110", "1111100"),
+    "Y": ("1100011", "1100011", "0110110", "0011100", "0011100", "0011100", "0011100"),
 }
 
 
 def build_ready(cells: list[tuple[str, str]], duration_ms: int, dark: bool) -> tuple[str, str]:
     """Build a large READY opening with real calendar-sized square pixels."""
     word = "READY"
-    width_in_columns = len(word) * 5 + len(word) - 1
+    width_in_columns = len(word) * 7 + len(word) - 1
     start_col = (53 - width_in_columns) // 2
     available = set(cells)
     color = "#39d353" if dark else "#2da44e"
@@ -53,7 +54,7 @@ def build_ready(cells: list[tuple[str, str]], duration_ms: int, dark: bool) -> t
             for col, bit in enumerate(bits):
                 if bit != "1":
                     continue
-                x = str(2 + 16 * (start_col + 6 * i + col))
+                x = str(2 + 16 * (start_col + 8 * i + col))
                 y = str(2 + 16 * row)
                 if (x, y) not in available:
                     raise ValueError(f"READY pixel must align with calendar cell: {x}, {y}")
@@ -63,8 +64,24 @@ def build_ready(cells: list[tuple[str, str]], duration_ms: int, dark: bool) -> t
         letters.append(
             f'<g class="arcade-ready-letter-{i}">' + "".join(pixels) + "</g>"
         )
+    # For the opening, cover real commits with neutral cells. Their original
+    # values and snake timing remain untouched underneath this temporary mask.
+    empty_grid = "".join(
+        f'<rect x="{x}" y="{y}" width="12" height="12" rx="2" ry="2"/>'
+        for x, y in cells
+    )
+    css.append(
+        f"@keyframes arcadeReadyEmpty{{0%,7.10%{{opacity:1}}"
+        f"7.16%,100%{{opacity:0}}}}"
+        f".arcade-ready-empty{{opacity:1;"
+        f"animation:arcadeReadyEmpty {duration_ms}ms steps(1,end) infinite}}"
+    )
     markup = (
-        f'<g id="arcade-ready" fill="{color}" pointer-events="none">'
+        '<g id="arcade-ready-empty" class="arcade-ready-empty" '
+        'fill="var(--c0)" stroke="var(--cb)" stroke-width="1" pointer-events="none">'
+        + empty_grid
+        + "</g>"
+        + f'<g id="arcade-ready" fill="{color}" pointer-events="none">'
         + "".join(letters)
         + "</g>"
     )
