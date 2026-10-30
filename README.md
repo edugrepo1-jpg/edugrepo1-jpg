@@ -5,7 +5,7 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=E6EDF3" />
     <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=24292F" />
     <img src="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=E6EDF3" alt="GM Nevz sendo escrito letra por letra" width="350" height="104" />
-  </picture><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/animated-lightning-clear-v3.svg" alt="Raio amarelo com pequenas descargas elétricas, sem fundo" width="106" height="104" />
+  </picture><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/animated-lightning-transparent.gif" alt="Raio amarelo animado com faíscas e transparência real" width="106" height="104" />
 </p>
 <h3 align="center">Android ROM &amp; App Developer &bull; Kernel Enthusiast &bull; Open Source</h3>
 
