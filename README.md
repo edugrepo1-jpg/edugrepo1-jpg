@@ -6,6 +6,7 @@
 Building and customizing Android experiences, from Samsung firmware to community tools.
 
 [![GitHub](https://img.shields.io/badge/GitHub-edugrepo1--jpg-181717?style=for-the-badge&logo=github)](https://github.com/edugrepo1-jpg)
+[![Telegram](https://img.shields.io/badge/Telegram-%40GMnevz-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/GMnevz)
 ![Profile views](https://komarev.com/ghpvc/?username=edugrepo1-jpg&label=Profile%20views&color=7c3aed&style=for-the-badge)
 
 </div>
