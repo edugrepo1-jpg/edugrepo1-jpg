@@ -24,8 +24,8 @@ jobs:
           # Optional personal token with read:user scope to count private contributions.
           github_token: ${{ secrets.SNAKE_READ_USER_TOKEN || github.token }}
           outputs: |
-            dist/contribution-snake-arcade-v3.svg?palette=github&color_snake=%232ea043
-            dist/contribution-snake-arcade-v3-dark.svg?palette=github-dark&color_snake=%2339d353
+            dist/contribution-snake-arcade-v4.svg?palette=github&color_snake=%232ea043
+            dist/contribution-snake-arcade-v4-dark.svg?palette=github-dark&color_snake=%2339d353
       - name: Keep snake in grid and animate level clear
         run: python3 scripts/enhance_snake.py dist
       - name: Set up Python for transparent lightning GIF
