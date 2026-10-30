@@ -24,17 +24,17 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 
 ## 🛠️ Tech & interests
 
-<div align="center">
-
-<img src="https://cdn.simpleicons.org/android/3DDC84" alt="android" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/linux/FCC624" alt="linux" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/git/F05032" alt="git" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="githubactions" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/gnubash/FFFFFF" alt="gnubash" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="dotnet" width="42" height="42" />
-<img src="https://cdn.simpleicons.org/python/3776AB" alt="python" width="42" height="42" />
-
-</div>
+<table align="center" border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android" width="40" height="40" /><br/><sub><b>Android</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" width="40" height="40" /><br/><sub><b>Linux</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" width="40" height="40" /><br/><sub><b>Git</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="GitHub Actions" width="40" height="40" /><br/><sub><b>GitHub Actions</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/gnubash/FFFFFF" alt="Bash" width="40" height="40" /><br/><sub><b>Bash</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="C#" width="40" height="40" /><br/><sub><b>C#</b></sub></td>
+    <td align="center" width="74"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="40" height="40" /><br/><sub><b>Python</b></sub></td>
+  </tr>
+</table>
 
 ---
 
