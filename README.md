@@ -1,6 +1,6 @@
 <div align="center">
 
-# GM Nevz ⚡
+<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/animated-gm-nevz.svg" alt="GM Nevz ⚡ — animated letter-by-letter name and electric sparks" width="520" />
 ### Android ROM & App Developer • Kernel Enthusiast • Open Source
 
 Developing and customizing Android ROMs, kernels, and apps — from Samsung firmware to user-facing experiences.
