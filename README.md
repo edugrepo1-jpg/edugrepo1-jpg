@@ -5,7 +5,7 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=E6EDF3" />
     <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=24292F" />
     <img src="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=750&amp;size=68&amp;duration=2800&amp;pause=1300&amp;center=true&amp;vCenter=true&amp;width=350&amp;height=104&amp;letterSpacing=normal&amp;background=00000000&amp;lines=GM+Nevz&amp;color=E6EDF3" alt="GM Nevz sendo escrito letra por letra" width="350" height="104" />
-  </picture><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/animated-lightning-clean-v5.svg" alt="Raio amarelo animado com faíscas e transparência real" width="106" />
+  </picture><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/output/animated-lightning-transparent.gif" alt="Raio amarelo animado com faíscas, sem fundo" width="106" />
 </p>
 <h3 align="center">Android ROM &amp; App Developer &bull; Kernel Enthusiast &bull; Open Source</h3>
 
@@ -25,6 +25,12 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 - **[ParadoxUI](https://github.com/edugrepo1-jpg/ParadoxUI)** — Work-in-progress custom ROM for Samsung Galaxy devices.
 - **[ArtisanKRNL / Exynos 990](https://github.com/edugrepo1-jpg/android_kernel_samsung_exynos990)** — Kernel development and experimentation.
 - **[DuoStatusBar / DUO Recreate](https://github.com/edugrepo1-jpg/duoStatusBar)** — Android status-bar customization app with dynamic-island-style controls.
+
+---
+
+## 🏅 Menção honrosa
+
+**Moto Nuvem** — Projeto definitivamente encerrado, reconhecido por sua trajetória e contribuição à comunidade de desenvolvimento Android.
 
 ---
 
