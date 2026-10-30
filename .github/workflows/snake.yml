@@ -22,9 +22,9 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?palette=github&color_snake=%237c3aed
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa
-      - name: Add dark/light background, confine snake and animate level clear
+            dist/github-contribution-grid-snake.svg?palette=github&color_snake=%232ea043
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%2339d353
+      - name: Keep snake in grid and animate level clear
         run: python3 scripts/enhance_snake.py dist
       - name: Publish snake
         uses: crazy-max/ghaction-github-pages@v4
