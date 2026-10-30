@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 118" width="108" height="118" role="img" aria-labelledby="bolt-title bolt-description">
+  <title id="bolt-title">Animated lightning bolt</title>
+  <desc id="bolt-description">Electric yellow lightning with flashing spark bolts, next to the animated typing of GM Nevz.</desc>
+  <defs>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .bolt{transform-origin:54px 59px;animation:lightningStrike 4.1s ease-in-out infinite}
+    .spark{opacity:0;animation:sparks 4.1s ease-out infinite}
+    .a{animation-delay:0s}.b{animation-delay:.08s}.c{animation-delay:.16s}.d{animation-delay:.24s}
+    @keyframes lightningStrike{
+      0%,13%{opacity:.22;transform:scale(.9)}
+      17%{opacity:1;transform:scale(1.12)}
+      20%{opacity:.28;transform:scale(1)}
+      23%,80%{opacity:1;transform:scale(1)}
+      84%{opacity:.55}88%,100%{opacity:.22}
+    }
+    @keyframes sparks{
+      0%,17%{opacity:0;transform:translateY(5px) scale(.5)}
+      20%,25%{opacity:1;transform:translateY(0) scale(1.1)}
+      31%{opacity:0;transform:translateY(-4px) scale(.7)}
+      44%{opacity:1}49%,63%{opacity:0}68%{opacity:.85}75%,100%{opacity:0}
+    }
+    @media (prefers-reduced-motion:reduce){.bolt{animation:none;opacity:1;transform:none}.spark{animation:none;opacity:.6;transform:none}}
+  </style>
+  <g filter="url(#glow)" fill="#facc15">
+    <path class="bolt" d="M56 9L29 66h23l-15 44 59-62H67L82 9z" stroke="#eab308" stroke-width="1.4" stroke-linejoin="round"/>
+    <path class="spark a" d="M18 25l-8 16h8l-5 13 17-20h-9l5-9z"/>
+    <path class="spark b" d="M88 18l-8 15h7l-5 12 17-19h-8l5-8z"/>
+    <path class="spark c" d="M12 76l-7 12h7l-3 10 15-17h-8l4-5z"/>
+    <path class="spark d" d="M93 80l-7 13h7l-4 11 16-18h-9l5-6z"/>
+  </g>
+</svg>
