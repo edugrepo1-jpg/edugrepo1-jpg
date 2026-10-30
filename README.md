@@ -32,19 +32,19 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/android.svg" alt="Android" width="80" height="78" />
+<a href="https://www.android.com/" title="Android" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/android.svg" alt="Android" width="80" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/linux.svg" alt="Linux" width="80" height="78" />
+<a href="https://www.kernel.org/" title="Linux" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/linux.svg" alt="Linux" width="80" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/git.svg" alt="Git" width="80" height="78" />
+<a href="https://git-scm.com/" title="Git" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/git.svg" alt="Git" width="80" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/githubactions.svg" alt="GitHub Actions" width="108" height="78" />
+<a href="https://github.com/features/actions" title="GitHub Actions" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/githubactions.svg" alt="GitHub Actions" width="108" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/gnubash.svg" alt="Bash" width="80" height="78" />
+<a href="https://www.gnu.org/software/bash/" title="Bash" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/gnubash.svg" alt="Bash" width="80" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/dotnet.svg" alt="C#" width="80" height="78" />
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/" title="C#" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/dotnet.svg" alt="C#" width="80" height="78" /></a>
 &nbsp;
-<img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/python.svg" alt="Python" width="80" height="78" />
+<a href="https://www.python.org/" title="Python" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/edugrepo1-jpg/edugrepo1-jpg/main/assets/tech/python.svg" alt="Python" width="80" height="78" /></a>
 
 </div>
 
