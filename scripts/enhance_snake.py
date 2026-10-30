@@ -64,6 +64,14 @@ def build_ready(cells: list[tuple[str, str]], duration_ms: int, dark: bool) -> t
         letters.append(
             f'<g class="arcade-ready-letter-{i}">' + "".join(pixels) + "</g>"
         )
+    # Animate the complete original grid, not its individual cells:
+    # this leaves the native snake/commit animations untouched.
+    css.append(
+        f"@keyframes arcadeRealGrid{{0%,7.10%{{opacity:0}}"
+        f"7.16%,100%{{opacity:1}}}}"
+        f".arcade-real-grid{{animation:arcadeRealGrid "
+        f"{duration_ms}ms steps(1,end) infinite}}"
+    )
     # For the opening, cover real commits with neutral cells. Their original
     # values and snake timing remain untouched underneath this temporary mask.
     empty_grid = "".join(
@@ -94,6 +102,20 @@ def enhance(path: Path) -> None:
         raise ValueError(f"Expected a full contribution grid; got {len(cells)} cells in {path}")
     if 'id="snake-cells"' in svg or 'id="arcade-clear"' in svg:
         raise ValueError(f"Refusing to process an already-enhanced SVG: {path}")
+
+    # Hide original commit pixels, not just cover them: their animated fills
+    # may otherwise bleed through the READY glyph edges (especially the A).
+    # Preserve each original rect and its native c* animation unchanged.
+    source_matches = list(CELLS.finditer(svg))
+    first = source_matches[0].start()
+    last = source_matches[-1].end()
+    source_rects = svg[first:last]
+    if len(CELLS.findall(source_rects)) != len(cells):
+        raise ValueError(f"Contribution rectangles are not contiguous in {path}")
+    svg = (
+        svg[:first] + '<g class="arcade-real-grid">'
+        + source_rects + '</g>' + svg[last:]
+    )
 
     snake_duration = re.search(r'\.s\{[^}]*?\b(\d+)ms\b', svg)
     if not snake_duration:

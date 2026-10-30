@@ -21,7 +21,7 @@ PHASES=[(2,3,4,8,12,14,17),(3,4,8,9,13,15,17),(2,5,6,9,12,16),
 (4,5,10,11,14,18),(3,6,8,13,16,18)]
 BRIGHT=[.45,.65,1,.5,1,1,.75,1,1,1,1,.7,1,1,.85,1,1,.9,1,.6]
 
-def render(n):
+def render_rgba(n):
     art=f'<g opacity="{BRIGHT[n]}">{BOLT}</g>'
     for i,p in enumerate(SPARKS):
         if n in PHASES[i]:
@@ -29,6 +29,11 @@ def render(n):
             art+=f'<path d="{p}" fill="#ffe255" opacity="{opacity}"/>'
     markup=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="512 0 166 140" width="{W}" height="{H}">{art}</svg>'
     img=Image.open(BytesIO(cairosvg.svg2png(bytestring=markup.encode('utf-8'),output_width=W,output_height=H))).convert('RGBA')
+
+    return img
+
+def render(n):
+    img=render_rgba(n)
     px=img.load()
     pixels=bytearray(W*H)
     for y in range(H):
@@ -54,6 +59,22 @@ def main():
         for n in (0,4,10,19):
             check.seek(n)
             assert check.convert('RGBA').getpixel((0,0))[3]==0
+    # APNG keeps true RGBA pixels instead of GIF's 1-bit palette
+    # transparency, preventing dark/palette-colored boxes around the bolt.
+    png=output/'animated-lightning-transparent.png'
+    rgba_frames=[render_rgba(i) for i in range(20)]
+    rgba_frames[0].save(
+        png,format='PNG',save_all=True,append_images=rgba_frames[1:],
+        duration=150,loop=0,disposal=2,blend=0,optimize=False
+    )
+    with Image.open(png) as check:
+        assert check.n_frames==20 and check.is_animated
+        for n in (0,4,10,19):
+            check.seek(n)
+            frame=check.convert('RGBA')
+            assert frame.getpixel((0,0))[3]==0
+            assert frame.getpixel((W-1,H-1))[3]==0
+    print(f"Transparent animated PNG: {png} ({png.stat().st_size} bytes, 20 frames)")
     print(f"Animated transparent GIF: {file} ({file.stat().st_size} bytes, 20 frames)")
 
 if __name__=='__main__':
