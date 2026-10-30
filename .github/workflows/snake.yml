@@ -20,7 +20,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa&color_dots=%232d2154,%234f46e5,%237c3aed,%23a855f7,%23e879f9
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa&color_dots=%23161b22,%234f46e5,%237c3aed,%23a855f7,%23e879f9
       - name: Publish snake
         uses: crazy-max/ghaction-github-pages@v4
         with:
