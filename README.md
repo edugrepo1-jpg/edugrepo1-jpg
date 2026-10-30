@@ -44,8 +44,6 @@ Building and customizing Android experiences, from Samsung firmware to community
 [![GitHub followers](https://img.shields.io/github/followers/edugrepo1-jpg?style=for-the-badge&logo=github&label=Followers)](https://github.com/edugrepo1-jpg?tab=followers)
 [![GitHub public repositories](https://img.shields.io/badge/Public_repositories-View_on_GitHub-238636?style=for-the-badge&logo=github)](https://github.com/edugrepo1-jpg?tab=repositories)
 
-**[📈 View my contribution activity on GitHub](https://github.com/edugrepo1-jpg?tab=overview)**
-
 </div>
 
 ---
