@@ -10,7 +10,7 @@ Building and customizing Android experiences, from Samsung firmware to community
 
 </div>
 
-## 🚀 Featured projects
+## 🔱 Fork Projects
 
 - **[ArtisanROM](https://github.com/edugrepo1-jpg/ArtisanROM)** — Custom firmware development for Samsung Galaxy devices.
 - **[ParadoxUI](https://github.com/edugrepo1-jpg/ParadoxUI)** — Work-in-progress custom ROM for Samsung Galaxy devices.
