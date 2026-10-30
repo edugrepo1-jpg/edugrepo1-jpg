@@ -21,7 +21,7 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa&color_dots=%230d1117,%234f46e5,%237c3aed,%23a855f7,%23e879f9
-      - name: Keep snake inside contribution grid
+      - name: Confine snake to contribution squares and remove progress bar
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -29,12 +29,20 @@ jobs:
 
           for path in Path("dist").glob("*.svg"):
               svg = path.read_text(encoding="utf-8")
-              # The grid occupies x=0..848 and y=0..112.
-              # Clip only the animated snake, not the contribution cells.
-              clip = '<defs><clipPath id="grid-boundary"><rect x="0" y="0" width="848" height="112"/></clipPath></defs>'
+              cells = re.findall(r'<rect class="c(?: c\\d+)?" x="([0-9.]+)" y="([0-9.]+)"[^>]*/>', svg)
+              if len(cells) < 300:
+                  raise RuntimeError(f"Contribution grid missing in {path}")
+              # Clip the animated snake to the exact union of contribution cells.
+              # Unlike a rectangular clip, this hides the snake in gaps and margins.
+              squares = ''.join(
+                  f'<rect x="{x}" y="{y}" width="12" height="12" rx="2" ry="2"/>'
+                  for x, y in cells
+              )
+              clip = '<defs><clipPath id="snake-cells" clipPathUnits="userSpaceOnUse">' + squares + '</clipPath></defs>'
               svg = svg.replace("</desc>", "</desc>" + clip, 1)
-              snake = re.compile(r'((?:<rect class="s s\d+"[^>]*/>)+)')
-              svg, count = snake.subn(r'<g clip-path="url(#grid-boundary)">\1</g>', svg, count=1)
+              svg = re.sub(r'<rect class="u u\\d+"[^>]*/>', '', svg)
+              snake = re.compile(r'((?:<rect class="s s\\d+"[^>]*/>)+)')
+              svg, count = snake.subn(lambda m: '<g clip-path="url(#snake-cells)">' + m.group(1) + '</g>', svg, count=1)
               if count != 1:
                   raise RuntimeError(f"Snake elements not found in {path}")
               path.write_text(svg, encoding="utf-8")
