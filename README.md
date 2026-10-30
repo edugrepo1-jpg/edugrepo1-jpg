@@ -24,14 +24,17 @@ Building and customizing Android experiences, from Samsung firmware to community
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Shell](https://img.shields.io/badge/Shell-121011?style=flat-square&logo=gnubash&logoColor=white)
+![C%23](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 
 ## 📊 GitHub activity
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=edugrepo1-jpg&show_icons=true&theme=tokyonight&hide_border=true)
+[![GitHub followers](https://img.shields.io/github/followers/edugrepo1-jpg?style=for-the-badge&logo=github&label=Followers)](https://github.com/edugrepo1-jpg?tab=followers)
+[![GitHub public repositories](https://img.shields.io/badge/Public_repositories-View_on_GitHub-238636?style=for-the-badge&logo=github)](https://github.com/edugrepo1-jpg?tab=repositories)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=edugrepo1-jpg&layout=compact&theme=tokyonight&hide_border=true)
+**[📈 View my contribution activity on GitHub](https://github.com/edugrepo1-jpg?tab=overview)**
 
 </div>
 
