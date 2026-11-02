@@ -21,6 +21,7 @@ Developing and customizing Android ROMs, kernels, and apps — from Samsung firm
 
 ## 🔱 Fork Projects
 
+- **[GM ROM + UN1CA]https://github.com/edugrepo1-jpg/UN1CA_y2slte/tree/gmhub-oneui9-r8s-20261101)** — Custom firmware development for Samsung Galaxy devices, One ui 9.
 - **[ArtisanROM](https://github.com/edugrepo1-jpg/ArtisanROM)** — Custom firmware development for Samsung Galaxy devices.
 - **[ParadoxUI](https://github.com/edugrepo1-jpg/ParadoxUI)** — Work-in-progress custom ROM for Samsung Galaxy devices.
 - **[ArtisanKRNL / Exynos 990](https://github.com/edugrepo1-jpg/android_kernel_samsung_exynos990)** — Kernel development and experimentation.
